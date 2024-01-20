@@ -578,7 +578,7 @@ function contagem() {
     const set_2=new Set(arr1);
     console.log(arr_r);
     if(Tid.length!=10 || Sid.length!=10 || !setsAreEqual(set_1,set_2) || c_r!=4 || c_v!=1 || c_n!=1 || c_l!=2){
-      alert("Wrong Connections");
+      swal("Wrong Connections");
     }
     else{
       var amp={};
@@ -596,7 +596,7 @@ function contagem() {
       s_element.add(s);
       const r_pos=[],l_pos=[];
       if(s[0]!='r' ||amp[s].length!=3 || (amp[s][0]!=arr[7] && amp[s][0][0]!='l') ){
-        alert("Wrong Connection");
+        swal("Wrong Connection");
       }
       else{
         if(amp[s][0]==arr[7]){
@@ -611,7 +611,7 @@ function contagem() {
            s=amp[s][1];
           
         if(s[0]!='r' ||amp[s].length!=2 || amp[s][1][0]!='l'){
-          alert("Wrong Connection");
+          swal("Wrong Connection");
         }
         else{
 
@@ -624,7 +624,7 @@ function contagem() {
 
           s=amp[s][1];
           if(s[0]!='l' ||amp[s].length!=2 || amp[s][1]!=arr[7]){
-            alert("Wrong Connection");
+            swal("Wrong Connection");
           }
           else{
 
@@ -635,7 +635,7 @@ function contagem() {
 
             s=amp[arr[2]][1];
             if(s[0]!='r' ||amp[s].length!=3 || amp[s][2][0]!='l'){
-              alert("Wrong Connection");
+              swal("Wrong Connection");
             }
             else{
 
@@ -646,7 +646,7 @@ function contagem() {
 
               s=amp[s][2];
           if(s[0]!='l' ||amp[s].length!=2 || amp[s][1]!=arr[7]){
-            alert("Wrong Connection");
+            swal("Wrong Connection");
           }
 
           else{
@@ -664,7 +664,7 @@ function contagem() {
           else
            s=amp[amp[s][0]][0];
            if(s[0]!='r' ||amp[s].length!=2 || amp[s][0]!=arr[7]){
-            alert("Wrong Connection");
+            swal("Wrong Connection");
           }
 
           else{
@@ -674,7 +674,7 @@ function contagem() {
             r_pos[3]=[r_top,r_left];
 
 
-            alert("Right Connections...Go Ahead!!");
+            swal("Right Connections...Go Ahead!!");
 
               l_ratio=Math.max(Math.floor((Math.random()*5) + 1),1); 
               console.log(l_ratio);
@@ -741,7 +741,7 @@ function contagem() {
            s=amp[s][1];
           
         if(s[0]!='r' ||amp[s].length!=2 || amp[s][1]!=arr[7]){
-          alert("Wrong Connection");
+          swal("Wrong Connection");
         }
         else{
 
@@ -753,7 +753,7 @@ function contagem() {
 
             s=amp[arr[2]][1];
             if(s[0]!='r' ||amp[s].length!=3 || amp[s][2]!=arr[7]){
-              alert("Wrong Connection");
+              swal("Wrong Connection");
             }
             else{
 
@@ -771,7 +771,7 @@ function contagem() {
                s=amp[s][1];
 
                if(s[0]!='r' ||amp[s].length!=2 || amp[s][0][0]!='l'){
-                alert("Wrong Connection");
+                swal("Wrong Connection");
               }
               else{
 
@@ -784,7 +784,7 @@ function contagem() {
 
                 s=amp[s][0];
                 if(s[0]!='l' ||amp[s].length!=2 || amp[s][0]!=arr[7]){
-                  alert("Wrong Connection");
+                  swal("Wrong Connection");
                 }
 
                 else{
@@ -798,7 +798,7 @@ function contagem() {
 
                   s=amp[amp[arr[2]][0]][0];
                   if(s[0]!='l' ||amp[s].length!=2 || amp[s][0]!=arr[7]){
-                    alert("Wrong Connection");
+                    swal("Wrong Connection");
                   }
                   else{
 
@@ -809,7 +809,7 @@ function contagem() {
 
 
 
-                    alert("Right Connections...Go Ahead!!");
+                    swal("Right Connections...Go Ahead!!");
 
                     var v_top=document.querySelector('#'+s_v + '').getBoundingClientRect().bottom + p_top;
                     var v_left=document.querySelector('#'+s_v + '').getBoundingClientRect().left - p_left;
