@@ -24,7 +24,7 @@ function touchHandler(event) {
     init();
 
 var xy;
-xy = Math.floor(Math.random() * 1000 + 1);
+xy = Math.floor(Math.random() * 1000 + 100);
 xy = xy / 100;
 console.log("xy", xy);
 var data1 = document.getElementById("data1").value;
@@ -41,6 +41,67 @@ var induct;
 var difference_bt;
 var val1, val2, val3;
 
+document.getElementById('data2').addEventListener('input',(e)=>{
+  // var data1 = document.getElementById("data1").value;
+  var data2 = document.getElementById("data2").value;
+  var data3 = document.getElementById("data3").value;
+  var data4 = document.getElementById("data4").value;
+  if (data4 !="" && data3!= "") {
+    val2 = xy.toFixed(1);
+  val3=10*data3/data2;
+  val3=val3.toFixed(2);
+  var mx=Math.max(val2,val3);
+  var mn=Math.min(val2,val3);
+  var i=(mx-mn)/mx;
+  i=i*25*data4;
+  i=i/50;
+  i=i.toFixed(3);
+  document.getElementById("demo9").innerHTML = i;
+  calculate_ind()
+  }
+ 
+});
+
+document.getElementById('data3').addEventListener('input',(e)=>{
+  // var data1 = document.getElementById("data1").value;
+  var data2 = document.getElementById("data2").value;
+  var data3 = document.getElementById("data3").value;
+  var data4 = document.getElementById("data4").value;
+  if (data4 !="" && data2!= "") {
+    val2 = xy.toFixed(1);
+  val3=10*data3/data2;
+  val3=val3.toFixed(2);
+  var mx=Math.max(val2,val3);
+  var mn=Math.min(val2,val3);
+  var i=(mx-mn)/mx;
+  i=i*25*data4;
+  i=i/50;
+  i=i.toFixed(3);
+  document.getElementById("demo9").innerHTML = i;
+  calculate_ind()
+  }
+ 
+});
+document.getElementById('data4').addEventListener('input',(e)=>{
+  // var data1 = document.getElementById("data1").value;
+  var data2 = document.getElementById("data2").value;
+  var data3 = document.getElementById("data3").value;
+  var data4 = document.getElementById("data4").value;
+  if (data2 !="" && data3!= "") {
+    val2 = xy.toFixed(1);
+  val3=10*data3/data2;
+  val3=val3.toFixed(1);
+  var mx=Math.max(val2,val3);
+  var mn=Math.min(val2,val3);
+  var i=(mx-mn)/mx;
+  i=i*25*data4;
+  i=i/50;
+  i=i.toFixed(3);
+  document.getElementById("demo9").innerHTML = i;
+  calculate_ind()
+  }
+ 
+});
 function calculate_ind() {
   var data1 = document.getElementById("data1").value;
   var data2 = document.getElementById("data2").value;
@@ -48,7 +109,7 @@ function calculate_ind() {
   var data4 = document.getElementById("data4").value;
   var data5 = document.getElementById("data5").value;
   var data6 = document.getElementById("data6").value;
-  induct = (10 * data2) / data3;
+  induct = (10 * data3) / data2;
   val1 = induct.toFixed(1);
   induct = induct.toFixed(3);
   var a = data4,
@@ -58,12 +119,22 @@ function calculate_ind() {
   difference_bt = difference_bt / xy;
   difference_bt = difference_bt * 10;
   difference_bt = difference_bt.toFixed(3);
-  val2 = xy.toFixed(1);
+  
   // console.log("data4,data5", a, b, c);
   if (data4 == "" || data5 == "") {
     difference_bt = "__.__";
   }
-  document.getElementById("demo9").innerHTML = difference_bt;
+  val2 = xy.toFixed(1);
+  // val3=10*data3/data2;
+  // val3=val3.toFixed(2);
+  // var mx=Math.max(val2,val3);
+  // var mn=Math.min(val2,val3);
+  // var i=(mx-mn)/mx;
+
+  // i=i*25;
+  // i=i/10;
+  // i=i.toFixed(3);
+  // document.getElementById("demo9").innerHTML = i;
   if (difference_bt == "__.__") {
 
   }
@@ -110,6 +181,7 @@ function check_value() {
   var data4 = document.getElementById("data4").value;
   var data5 = document.getElementById("data5").value;
   var data6 = document.getElementById("data6").value;
+val2=(xy).toFixed(1);
 
   // console.log("val11", xy, "val112", difference_bt);
   if (data1 == "" || data2 == "" || data3 == "" || data4 == "" || data5 == "") {
@@ -124,7 +196,8 @@ function check_value() {
   val3 = Number(data6).toFixed(1);
   // console.log("val1", val1, "val2", val2);
   // console.log("xyz", val1, val2, val3);
-  if (val2 == val3) {
+  console.log(val2,val3);
+  if (Math.abs(val2 -val3)<0.35) {
     swal("Balanced Bridge");
     flag1 = 1;
   } else {
@@ -134,6 +207,7 @@ function check_value() {
 
 function addRows() {
   // Get user inputs
+
   if (flag1 == 0) {
     swal("Enter Correct value of inductance");
     return;
@@ -153,7 +227,7 @@ function addRows() {
 
     return;
   }
-
+  calculate_ind();
   // for (var i = 1; i <= 300; i++) {
   //   let x = Math.floor((Math.random() * 1000) + 1);
   //   x=x/100;
@@ -213,10 +287,10 @@ function addRows() {
   row.appendChild(cell);
   document.getElementById("myTable").appendChild(row);
 
-  xy = Math.floor(Math.random() * 1000 + 1);
+  xy = Math.floor(Math.random() * 1000 + 100);
   xy = xy / 100;
   // console.log("xy", xy);
-  calculate_ind();
+  
 }
 
 

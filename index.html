@@ -219,12 +219,12 @@ top: 40px;right: 34px;">
 
 
               <label class="form-control" >Enter R3: <span id="demo2"></span> Ω</label>
-              <input class="form-control" type="range" min="1" max="100" value="1" onclick="calculate_ind()" step="1" style="width: 300px"
+              <input class="form-control" type="range" min="1" max="100" value="1" onclick="calculate_ind()" step="0.001" style="width: 300px"
                 id="data2" style="width:100px"><br>
 
 
               <label class="form-control" >Enter R4: <span id="demo3"></span> Ω</label>
-              <input class="form-control" type="range" min="1" max="100" step="1" onclick="calculate_ind()" value="1" style="width: 300px"
+              <input class="form-control" type="range" min="1" max="100" step="0.001" onclick="calculate_ind()" value="1" style="width: 300px"
                 id="data3" style="width:100px"><br>
 
 
@@ -234,9 +234,15 @@ top: 40px;right: 34px;">
                 <input type="number" id="data4" style="width:100px"> </label>
 
               <label>Enter Frequency (in Hz) :
-                <input type="number" id="data5" style="width:100px"> </label>
+                <!-- <input type="number" id="data5" style="width:100px"> </label> -->
+                <select>
+                  <option value="50" id="data5" >50Hz</option>
+                </select>
 
-              <p>Deflection in meter: <span id="demo9" style="color: rgb(228, 0, 0);"></span></p>
+             <div style="display:flex; flex-direction:row"><p>Deflection in meter: <span id="demo9" style="color: rgb(228, 0, 0);">
+                <!-- <p>&nbsp &nbsp --.--</p> -->
+              </div> 
+              </span></p>
               <label>Enter Calculated inductance value (in mH) :</label>
               <br>
               <input class="form-control" type="number" id="data6" style="width:100px"><br>
